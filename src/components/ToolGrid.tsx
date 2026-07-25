@@ -5,6 +5,8 @@ import { ToolCard } from "./ToolCard";
 
 interface ToolGridProps {
   sections: ToolSections;
+  searchKeywords: string[];
+  isSearching: boolean;
   categories: Category[];
   loadStatus: LoadStatus;
   errorMessage: string;
@@ -15,6 +17,8 @@ interface ToolGridProps {
 
 export function ToolGrid({
   sections,
+  searchKeywords,
+  isSearching,
   categories,
   loadStatus,
   errorMessage,
@@ -51,11 +55,9 @@ export function ToolGrid({
     );
   }
 
-  // Meets Criteria stays behind "Show More" only while browsing; searching
-  // always expands it so no matches are hidden.
+  // Meets Criteria stays behind "Show More" only while browsing
   const hasCurated = featured.length > 0 || editorsPicks.length > 0;
-  const searching = searchQuery.trim().length > 0;
-  const meetsExpanded = !hasCurated || searching || showMore;
+  const meetsExpanded = !hasCurated || showMore;
 
   return (
     <main className="tool-sections">
@@ -69,48 +71,53 @@ export function ToolGrid({
         </div>
       )}
 
-      {featured.length > 0 && (
-        <Section
-          label="Featured"
-          variant="featured"
-          tools={featured}
-          categories={categories}
-          setSearchQuery={setSearchQuery}
-        />
-      )}
+          <>
+            {featured.length > 0 && (
+              <Section
+                label="Featured"
+                variant="featured"
+                tools={featured}
+                categories={categories}
+                searchKeywords={searchKeywords}
+                setSearchQuery={setSearchQuery}
+              />
+            )}
 
-      {editorsPicks.length > 0 && (
-        <Section
-          label="Editor's Picks"
-          variant="editors"
-          tools={editorsPicks}
-          categories={categories}
-          setSearchQuery={setSearchQuery}
-        />
-      )}
+            {editorsPicks.length > 0 && (
+              <Section
+                label="Editor's Picks"
+                variant="editors"
+                tools={editorsPicks}
+                categories={categories}
+                searchKeywords={searchKeywords}
+                setSearchQuery={setSearchQuery}
+              />
+            )}
 
-      {meetsCriteria.length > 0 &&
-        (meetsExpanded ? (
-          <Section
-            label="Meets Criteria"
-            variant="meets"
-            tools={meetsCriteria}
-            categories={categories}
-            setSearchQuery={setSearchQuery}
-          />
-        ) : (
-          <div className="show-more-wrap">
-            <button
-              type="button"
-              className="show-more-btn"
-              onClick={() => setShowMore(true)}
-            >
-              Show More - {meetsCriteria.length} more{" "}
-              {meetsCriteria.length === 1 ? "tool meets" : "tools meet"} the
-              criteria
-            </button>
-          </div>
-        ))}
+            {meetsCriteria.length > 0 &&
+              ((meetsExpanded || isSearching)? (
+                <Section
+                  label="Meets Criteria"
+                  variant="meets"
+                  tools={meetsCriteria}
+                  categories={categories}
+                  searchKeywords={searchKeywords}
+                  setSearchQuery={setSearchQuery}
+                />
+              ) : (
+                <div className="show-more-wrap">
+                  <button
+                    type="button"
+                    className="show-more-btn"
+                    onClick={() => setShowMore(true)}
+                  >
+                    Show More - {meetsCriteria.length} more{" "}
+                    {meetsCriteria.length === 1 ? "tool meets" : "tools meet"}{" "}
+                    the criteria
+                  </button>
+                </div>
+              ))}
+          </>
     </main>
   );
 }
@@ -120,6 +127,7 @@ interface SectionProps {
   variant: "featured" | "editors" | "meets";
   tools: Tool[];
   categories: Category[];
+  searchKeywords: string[];
   setSearchQuery: (query: string) => void;
 }
 
@@ -128,6 +136,7 @@ function Section({
   variant,
   tools,
   categories,
+  searchKeywords,
   setSearchQuery,
 }: SectionProps) {
   return (
@@ -139,6 +148,7 @@ function Section({
             key={tool.id}
             tool={tool}
             category={categories.find((c) => c.id === tool.category)}
+            searchKeywords={searchKeywords}
             setSearchQuery={setSearchQuery}
           />
         ))}

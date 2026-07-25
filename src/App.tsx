@@ -14,6 +14,8 @@ export default function App() {
     tools,
     filteredTools,
     sections,
+    searchKeywords,
+    isSearching,
     categories,
     loadStatus,
     errorMessage,
@@ -52,6 +54,8 @@ export default function App() {
         <ReportProvider>
           <ToolGrid
             sections={sections}
+            searchKeywords={searchKeywords}
+            isSearching={isSearching}
             categories={categories}
             loadStatus={loadStatus}
             errorMessage={errorMessage}

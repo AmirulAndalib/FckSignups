@@ -4,15 +4,22 @@ import { useModal } from "../hooks/useModal";
 import { useReport } from "../hooks/useReport";
 import type { Category, Tool } from "../types";
 import { formatStars } from "../utils/formatters";
+import { highlightMatches } from "../utils/highlight";
 import { Toast } from "./Toast";
 
 interface ToolCardProps {
   tool: Tool;
   category: Category | undefined;
+  searchKeywords?: string[];
   setSearchQuery: (query: string) => void;
 }
 
-export function ToolCard({ tool, category, setSearchQuery }: ToolCardProps) {
+export function ToolCard({
+  tool,
+  category,
+  searchKeywords = [],
+  setSearchQuery,
+}: ToolCardProps) {
   const cat: Pick<Category, "icon" | "name"> = category ?? {
     icon: "◉",
     name: tool.category,
@@ -68,7 +75,7 @@ export function ToolCard({ tool, category, setSearchQuery }: ToolCardProps) {
               rel="noopener noreferrer"
               className="card-title"
             >
-              {tool.name}
+              {highlightMatches(tool.name, searchKeywords)}
               <ExternalIcon />
             </a>
           </div>
@@ -123,7 +130,9 @@ export function ToolCard({ tool, category, setSearchQuery }: ToolCardProps) {
 
           </div>
 
-        <p className="card-desc">{tool.description}</p>
+        <p className="card-desc">
+          {highlightMatches(tool.description, searchKeywords)}
+        </p>
 
         <ul className="card-tags">
           {tool.tags.map((tag) => (
@@ -137,7 +146,7 @@ export function ToolCard({ tool, category, setSearchQuery }: ToolCardProps) {
                   setSearchQuery(tag);
                 }}
               >
-                #{tag}
+                #{highlightMatches(tag, searchKeywords)}
               </button>
             </li>
           ))}

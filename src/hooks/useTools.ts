@@ -16,6 +16,8 @@ interface UseToolsReturn {
   tools: Tool[];
   filteredTools: Tool[];
   sections: ToolSections;
+  searchKeywords: string[];
+  isSearching: boolean;
   categories: Category[];
   loadStatus: LoadStatus;
   errorMessage: string;
@@ -23,6 +25,16 @@ interface UseToolsReturn {
   activeCategory: string;
   setSearchQuery: (q: string) => void;
   setActiveCategory: (id: string) => void;
+}
+
+function sectionize(tools: Tool[]): ToolSections {
+  return {
+    featured: tools.filter((entry) => entry.section === "featured"),
+    editorsPicks: tools.filter((entry) => entry.section === "editors-pick"),
+    meetsCriteria: tools.filter(
+      (entry) => entry.section !== "featured" && entry.section !== "editors-pick",
+    ),
+  };
 }
 
 export function useTools(): UseToolsReturn {
@@ -69,45 +81,41 @@ export function useTools(): UseToolsReturn {
         description: "All tools",
       });
     }
-    // Legacy schema fallback: tools.json fetched from prod may still carry
-    // the old `featured` boolean instead of `section`.
-    const tools = (data.tools ?? []).map((t) => {
-      if (t.section) return t;
-      const legacy = t as Tool & { featured?: boolean };
-      return {
-        ...t,
-        section: legacy.featured ? "featured" : "meets-criteria",
-      } satisfies Tool;
-    });
-    setAllTools(tools);
+
+    setAllTools(data.tools);
     setCategories(cats);
     setLoadStatus(!error ? "success" : "error");
   }
 
-  const filteredTools = useMemo(() => {
-    const keywords = tokenize(searchQuery);
-    return allTools
-      .map((tool) => ({ tool, score: matchScore(tool, keywords) }))
-      .filter(({ tool, score }) => {
-        const matchCat =
-          activeCategory === "all" || tool.category === activeCategory;
-        return matchCat && (keywords.length === 0 || score > 0);
-      })
-      .sort(
-        (a, b) =>
-          b.score - a.score || (b.tool.stars ?? 0) - (a.tool.stars ?? 0),
-      )
-      .map(({ tool }) => tool);
-  }, [allTools, activeCategory, searchQuery]);
+  const searchKeywords = useMemo(() => tokenize(searchQuery), [searchQuery]);
+  const isSearching = searchKeywords.length > 0;
 
+  // Search filtering & ranking logic
+  const scoredTools = useMemo(() => {
+    const keywords = searchKeywords;
+    return allTools
+      .filter(
+        (tool) => activeCategory === "all" || tool.category === activeCategory,  // Filters out the entries not the category selected.
+      )
+      .map((tool) => ({ tool, score: matchScore(tool, keywords) }))              // Scores the entries by how many keywords it matched.
+      .filter(({ score }) => keywords.length === 0 || score == keywords.length); // Filters out the entries that don't match the number
+  }, [allTools, activeCategory, searchQuery]);                                   // of keywords.
+
+  // Sorts by filter matching score & stars
+  const filteredTools = useMemo(
+    () =>
+      [...scoredTools]
+        .sort(
+          (a, b) =>
+            b.score - a.score || (b.tool.stars ?? 0) - (a.tool.stars ?? 0),
+        )
+        .map(({ tool }) => tool),
+    [scoredTools],
+  );
+
+  // Turns filtered tools into three sections: featured, editor's picks, and meets criteria.
   const sections = useMemo<ToolSections>(
-    () => ({
-      featured: filteredTools.filter((t) => t.section === "featured"),
-      editorsPicks: filteredTools.filter((t) => t.section === "editors-pick"),
-      meetsCriteria: filteredTools.filter(
-        (t) => t.section !== "featured" && t.section !== "editors-pick",
-      ),
-    }),
+    () => sectionize(filteredTools),
     [filteredTools],
   );
 
@@ -115,6 +123,8 @@ export function useTools(): UseToolsReturn {
     tools: allTools,
     filteredTools,
     sections,
+    searchKeywords,
+    isSearching,
     categories,
     loadStatus,
     errorMessage,

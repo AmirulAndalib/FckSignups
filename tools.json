@@ -257,7 +257,7 @@
       "license": "MIT",
       "stars": 7715,
       "addedAt": "2026-05-07",
-      "section": "meets-criteria"
+      "section": "editors-pick"
     },
     {
       "id": "method-draw",
@@ -275,7 +275,7 @@
       "license": "MIT",
       "stars": 2997,
       "addedAt": "2026-05-07",
-      "section": "meets-criteria"
+      "section": "editors-pick"
     },
     {
       "id": "piskel",
@@ -293,7 +293,7 @@
       "license": "Apache-2.0",
       "stars": 12636,
       "addedAt": "2026-05-07",
-      "section": "meets-criteria"
+      "section": "editors-pick"
     },
     {
       "id": "browserpad",
@@ -347,7 +347,7 @@
       "license": "MIT",
       "stars": 900,
       "addedAt": "2026-05-07",
-      "section": "meets-criteria"
+      "section": "editors-pick"
     },
     {
       "id": "ethercalc",
@@ -365,7 +365,7 @@
       "license": "CPAL-1.0",
       "stars": 3036,
       "addedAt": "2026-05-07",
-      "section": "meets-criteria"
+      "section": "editors-pick"
     },
     {
       "id": "dillinger",
@@ -383,7 +383,7 @@
       "license": "MIT",
       "stars": 8262,
       "addedAt": "2026-05-07",
-      "section": "meets-criteria"
+      "section": "editors-pick"
     },
     {
       "id": "stackedit",
@@ -455,7 +455,7 @@
       "license": "GPL-3.0",
       "stars": 194,
       "addedAt": "2026-05-07",
-      "section": "meets-criteria"
+      "section": "editors-pick"
     },
     {
       "id": "dart-pad",
@@ -509,7 +509,7 @@
       "license": "MIT",
       "stars": 370,
       "addedAt": "2026-05-07",
-      "section": "meets-criteria"
+      "section": "editors-pick"
     },
     {
       "id": "jspaint",
@@ -649,7 +649,7 @@
       "license": "AGPL-3.0",
       "stars": 330,
       "addedAt": "2026-07-10",
-      "section": "meets-criteria"
+      "section": "editors-pick"
     },
     {
       "id": "dsheets",
@@ -664,7 +664,7 @@
       "license": "AGPL-3.0",
       "stars": 72,
       "addedAt": "2026-06-11",
-      "section": "meets-criteria"
+      "section": "editors-pick"
     },
     {
       "id": "drawio",
@@ -680,7 +680,7 @@
       "license": "Apache-2.0",
       "stars": 6810,
       "addedAt": "2026-06-11",
-      "section": "meets-criteria"
+      "section": "editors-pick"
     },
     {
       "id": "mr-data-converter",
@@ -715,7 +715,7 @@
       "license": "Apache-2.0",
       "stars": 35337,
       "addedAt": "2026-06-11",
-      "section": "meets-criteria"
+      "section": "editors-pick"
     },
     {
       "id": "brouter-web",
@@ -733,7 +733,7 @@
       "license": "MIT",
       "stars": 489,
       "addedAt": "2026-06-11",
-      "section": "meets-criteria"
+      "section": "editors-pick"
     },
     {
       "id": "kicanvas",
@@ -751,7 +751,7 @@
       "license": "MIT",
       "stars": 1100,
       "addedAt": "2026-06-11",
-      "section": "meets-criteria"
+      "section": "editors-pick"
     },
     {
       "id": "circuitjs1",
@@ -769,7 +769,7 @@
       "license": "GPL-2.0",
       "stars": 2310,
       "addedAt": "2026-06-11",
-      "section": "meets-criteria"
+      "section": "editors-pick"
     },
     {
       "id": "algorithm-visualizer",
@@ -788,7 +788,7 @@
       "license": "MIT",
       "stars": 48640,
       "addedAt": "2026-06-11",
-      "section": "meets-criteria"
+      "section": "editors-pick"
     },
     {
       "id": "subtitleedit",
@@ -804,7 +804,7 @@
       "license": "MIT",
       "stars": 13492,
       "addedAt": "2026-06-11",
-      "section": "meets-criteria"
+      "section": "editors-pick"
     },
     {
       "id": "pixelorama",
@@ -821,7 +821,7 @@
       "license": "MIT",
       "stars": 9892,
       "addedAt": "2026-06-13",
-      "section": "meets-criteria"
+      "section": "editors-pick"
     },
     {
       "id": "composeyogi",
@@ -856,7 +856,7 @@
       "license": "CC BY-NC-SA 4.0",
       "stars": 149,
       "addedAt": "2026-06-13",
-      "section": "meets-criteria"
+      "section": "editors-pick"
     },
     {
       "id": "vert",
@@ -873,7 +873,7 @@
       "license": "AGPL-3.0",
       "stars": 15259,
       "addedAt": "2026-06-13",
-      "section": "meets-criteria"
+      "section": "editors-pick"
     },
     {
       "id": "godsvg",
