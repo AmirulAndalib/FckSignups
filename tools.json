@@ -3871,6 +3871,103 @@
       "stars": 61,
       "addedAt": "2026-07-15",
       "section": "featured"
+    },
+    {
+      "id": "pdfme",
+      "name": "PDFme",
+      "description": "Template designer, PDF viewer, and powerful generation capabilities. Create custom PDFs effortlessly",
+      "url": "https://playground.pdfme.com/",
+      "category": "productivity",
+      "tags": [
+        "pdf-editor",
+        "pdf-designer",
+        "pdf-template"
+      ],
+      "github": "https://github.com/pdfme/pdfme",
+      "license": "MIT",
+      "stars": 4700,
+      "addedAt": "2026-07-26",
+      "section": "editors-pick"
+    },
+    {
+      "id": "gitreverse",
+      "name": "GitReverse",
+      "description": "Reverse engineer any repo into it's original prompt",
+      "url": "https://www.gitreverse.com/",
+      "category": "development",
+      "tags": [
+        "reverse-engineer",
+        "reverse-prompt",
+        "llm-tool"
+      ],
+      "github": "https://github.com/filiksyos/gitreverse",
+      "license": "?",
+      "stars": 1259,
+      "addedAt": "2026-07-26",
+      "section": "meets-criteria"
+    },
+    {
+      "id": "zoxilsi-studio",
+      "name": "zoxilsi studio",
+      "description": "Design organic, flowing gradients by sculpting a bezier-patched lattice in real-time WebGL. Export to images, video, code, or as editable project files",
+      "url": "https://studio.zoxilsi.cc/",
+      "category": "design",
+      "tags": [
+        "gradient-designer"
+      ],
+      "github": "https://github.com/zoxilsi/studio",
+      "license": "MIT",
+      "stars": 73,
+      "addedAt": "2026-07-26",
+      "section": "meets-criteria"
+    },
+    {
+      "id": "nosuggest",
+      "name": "NoSuggest",
+      "description": "Distraction free YouTube client without any recommendations, no shorts, no auto-play, no home screen videos, no now trending feeds",
+      "url": "https://nosuggest.com",
+      "category": "media",
+      "tags": [
+        "youtube-client",
+        "youtube-viewer"
+      ],
+      "github": "https://github.com/No-Suggest/NoSuggest",
+      "license": "NC",
+      "stars": 30,
+      "addedAt": "2026-07-26",
+      "section": "meets-criteria"
+    },
+    {
+      "id": "rosint",
+      "name": "Rosint+",
+      "description": "Allows you to see deleted reddit posts, private profiles and profile stats (top subreddits, activity heatmap, common words used)",
+      "url": "https://rosintplus.github.io/",
+      "category": "data",
+      "tags": [
+        "osint",
+        "reddit-osint"
+      ],
+      "github": "https://github.com/rosintplus/rosintplus.github.io",
+      "license": "MIT",
+      "stars": 3,
+      "addedAt": "2026-07-26",
+      "section": "meets-criteria"
+    },
+    {
+      "id": "godot-web",
+      "name": "Godot Web",
+      "description": "Provides a zero-install Godot enviroment that runs entirely in your browser.",
+      "url": "https://editor.godotengine.org/releases/latest/",
+      "category": "development",
+      "tags": [
+        "game-engine",
+        "game-development"
+      ],
+      "github": "https://github.com/godotengine/godot",
+      "license": "MIT",
+      "stars": 114600,
+      "addedAt": "2026-07-26",
+      "section": "editors-pick"
     }
   ]
 }
