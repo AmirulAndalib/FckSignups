@@ -118,7 +118,7 @@ body::after {
     position: fixed;
     display: flex;
     align-items: center;
-    gap: 0.3rem;
+    gap: 0.6rem;
     z-index: 100;
     top: 2rem;
     left: 50%;
@@ -127,8 +127,16 @@ body::after {
     background-color: var(--surface);
     border: 2px solid var(--accent);
     box-shadow: var(--accent) 0px 0px 52px;
-    border-radius: 2rem;
-    padding: 1rem 2rem;
+    border-radius: 1rem;
+    padding: .8rem 1rem;
+}
+
+.toast-container>p {
+    text-wrap: nowrap;
+}
+
+.toast-container svg {
+    stroke-width: 2px;
 }
 
 .close-toast-button {
