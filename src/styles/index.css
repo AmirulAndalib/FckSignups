@@ -131,8 +131,29 @@ body::after {
     padding: .8rem 1rem;
 }
 
+@media (max-width: 376px) {
+    .toast-container {
+        top: 0;
+        left: 0;
+        transform: translateX(0);
+        border: 0;
+        border-bottom: 2px solid var(--accent);
+        border-radius: 0;
+        width: 100dvw;
+        max-width: unset;
+        justify-content: space-between;
+        padding: 1.2rem;
+    }
+}
+
 .toast-container>p {
     text-wrap: nowrap;
+}
+
+@media (max-width: 376px) {
+    .toast-container>p {
+        text-wrap: wrap;
+    }
 }
 
 .toast-container svg {
