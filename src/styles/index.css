@@ -44,6 +44,11 @@ body {
     overflow-x: hidden;
 }
 
+button {
+    text-box-trim: trim-both;
+    cursor: pointer;
+}
+
 .skip-link {
     position: fixed;
     top: 0;
@@ -168,7 +173,6 @@ body::after {
 
 .close-toast-button svg {
     color: var(--accent);
-    cursor: pointer;
     transition-duration: 0.3s;
     width: 1.6rem;
     height: 1.6rem;
@@ -1640,9 +1644,14 @@ label:has(+ .modal-input[required])::after {
 }
 
 .report-button {
+    width: 40px;
+    height: 40px;
     border-radius: .5rem;
-    padding: 0.5rem 0.5rem;
+    padding: 0.5rem;
     background-color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .report-button svg {
