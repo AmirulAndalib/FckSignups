@@ -111,7 +111,7 @@ export function ToolGrid({
                     className="show-more-btn"
                     onClick={() => setShowMore(true)}
                   >
-                    Show More - {meetsCriteria.length} more{" "}
+                    <strong>Show More </strong><br/>{meetsCriteria.length} more{" "}
                     {meetsCriteria.length === 1 ? "tool meets" : "tools meet"}{" "}
                     the criteria
                   </button>

@@ -677,6 +677,7 @@ input[type="text"]::placeholder {
 
 /* SHOW MORE */
 .show-more-wrap {
+    background-color: var(--border);
     max-width: 1400px;
     width: 100%;
     margin: 0 auto;
@@ -684,18 +685,60 @@ input[type="text"]::placeholder {
 }
 
 .show-more-btn {
+    position: relative;
     width: 100%;
     padding: 1rem 1.5rem;
-    background: transparent;
+    background: var(--surface);
+    line-height: 1.3rem;
     border: 1px dashed var(--accent);
     border-radius: 1rem;
-    color: var(--text);
+    color: var(--text-muted);
     font-family: var(--font-mono);
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     cursor: pointer;
     transition: all 0.2s ease;
+    z-index: 10;
+}
+
+@property --degree {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 0deg;
+}
+
+.show-more-btn::before {
+    content: "";
+    position: absolute;
+    overflow: hidden;
+    inset: -2px;
+    background: conic-gradient(from var(--degree), #00e1ff, #ff1e69 50%, #00e1ff);
+    padding: 10px;
+    border-radius: 1rem;
+    animation: changingBgColor 5s linear infinite;
+    z-index: -2;
+    isolation: isolate;
+}
+
+.show-more-btn::after {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    border-radius: calc(1rem - 2px);
+    background: var(--surface);
+    z-index: -1;
+}
+
+.show-more-btn strong {
+    color: var(--text);
+    font-size: 1.2em;
+}
+
+@keyframes changingBgColor {
+    to {
+        --degree: 360deg;
+    }
 }
 
 .show-more-btn:hover {
