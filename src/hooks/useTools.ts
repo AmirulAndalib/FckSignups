@@ -51,6 +51,7 @@ export function useTools(): UseToolsReturn {
       let data: ToolsData | null = null;
       let error = "";
 
+      console.log(import.meta.env.DEV)
       if (import.meta?.env?.DEV) {
         data = await loadTools(DEV_JSON_URL);
       }
@@ -87,7 +88,7 @@ export function useTools(): UseToolsReturn {
   }
 
   const searchKeywords = useMemo(() => tokenize(searchQuery), [searchQuery]);
-  const isSearching = searchKeywords.length > 0;
+  const isSearching = searchKeywords.length > 0 || activeCategory !== "all";
 
   // Search filtering & ranking logic
   const scoredTools = useMemo(() => {
