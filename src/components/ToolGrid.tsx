@@ -60,7 +60,7 @@ export function ToolGrid({
   const meetsExpanded = !hasCurated || showMore;
 
   return (
-    <main className="tool-sections">
+    <main className="tool-sections" id="main-content">
       {loadStatus == "error" && (
         <div className="error">
           <h3>ERR_LOAD_FAILED</h3>

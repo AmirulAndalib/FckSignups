@@ -3,6 +3,7 @@ import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 import { Report } from "./components/Report";
 import { ScrollToTopButton } from "./components/ScrollToTopButton";
+import SkipContentLink from "./components/SkipContentLink";
 import { ToolGrid } from "./components/ToolGrid";
 import { MODAL_CONFIGS } from "./constants/ModalConfigs";
 import { ModalProvider } from "./hooks/useModal";
@@ -30,6 +31,7 @@ export default function App() {
   return (
     <>
       <ModalProvider modalConfigs={MODAL_CONFIGS}>
+        <SkipContentLink />
         <Header
           toolCount={tools.length}
           categoryCount={Math.max(0, categories.length - 1)}
