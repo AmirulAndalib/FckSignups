@@ -88,7 +88,7 @@ export function useTools(): UseToolsReturn {
   }
 
   const searchKeywords = useMemo(() => tokenize(searchQuery), [searchQuery]);
-  const isSearching = searchKeywords.length > 0 || activeCategory !== "all";
+  const isSearching = searchKeywords.length > 0;
 
   // Search filtering & ranking logic
   const scoredTools = useMemo(() => {
