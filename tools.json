@@ -3968,6 +3968,102 @@
       "stars": 114600,
       "addedAt": "2026-07-26",
       "section": "editors-pick"
+    },
+    {
+      "id": "pynote",
+      "name": "PyNote",
+      "description": "A serverless, zero-setup Python notebook environment",
+      "url": "https://pynote-notebook.vercel.app/",
+      "category": "development",
+      "tags": [
+        "jupyter-notebook-like",
+        "python-execution-runtime"
+      ],
+      "github": "https://github.com/bouzidanas/pynote-notebook-editor",
+      "license": "MIT",
+      "stars": 69,
+      "addedAt": "2026-08-03",
+      "section": "meets-criteria"
+    },
+    {
+      "id": "omnitools",
+      "name": "OmniTools",
+      "description": "Collection of powerful web-based tools for everyday tasks",
+      "url": "https://omnitools.app/",
+      "category": "productivity",
+      "tags": [
+        "tools-list",
+        "general-tools"
+      ],
+      "github": "https://github.com/iib0011/omni-tools",
+      "license": "MIT",
+      "stars": 9946,
+      "addedAt": "2026-08-03",
+      "section": "meets-criteria"
+    },
+    {
+      "id": "dbview",
+      "name": "DBView",
+      "description": "DDL into interactive entity-relationship diagrams instantly",
+      "url": "https://dbview.pages.dev/",
+      "category": "development",
+      "tags": [
+        "sql",
+        "database-visualizer",
+        "erd"
+      ],
+      "github": "https://github.com/vanshbordia/dbview",
+      "license": "MIT",
+      "stars": 0,
+      "addedAt": "2026-08-03",
+      "section": "meets-criteria"
+    },
+    {
+      "id": "croc",
+      "name": "Croc",
+      "description": "Easily and securely send things from one computer to another 🐊 📦",
+      "url": "https://getcroc.com/",
+      "category": "utilities",
+      "tags": [
+        "file-transfer",
+        "file-share"
+      ],
+      "github": "https://github.com/schollz/croc",
+      "license": "MIT",
+      "stars": 39278,
+      "addedAt": "2026-08-03",
+      "section": "editors-pick"
+    },
+    {
+      "id": "binthere",
+      "name": "BinThere",
+      "description": "Write a note, get a link, share it, and the note self-destructs the moment it's read",
+      "url": "https://binthere.gaury.dev/",
+      "category": "utilities",
+      "tags": [
+        "paste-bin",
+        "share-notes"
+      ],
+      "github": "https://github.com/nxfu/binthere",
+      "license": "MIT",
+      "stars": 153,
+      "addedAt": "2026-08-03",
+      "section": "meets-criteria"
+    },
+    {
+      "id": "opendaw",
+      "name": "openDAW",
+      "description": "next-generation web-based Digital Audio Workstation (DAW)",
+      "url": "https://opendaw.studio/",
+      "category": "media",
+      "tags": [
+        "digital-audio-workstation"
+      ],
+      "github": "https://github.com/andremichelle/openDAW",
+      "license": "?",
+      "stars": 1948,
+      "addedAt": "2026-08-03",
+      "section": "editors-pick"
     }
   ]
 }
