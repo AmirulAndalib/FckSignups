@@ -50,6 +50,12 @@ button {
     cursor: pointer;
 }
 
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-inline: 1.5rem;
+}
+
 .skip-link {
     position: fixed;
     top: 0;
@@ -236,9 +242,7 @@ body::after {
 /* ===== HEADER ===== */
 .site-header {
     position: relative;
-    padding: 3rem 1.5rem 2rem;
-    max-width: 1400px;
-    margin: 0 auto;
+    padding-block: 3rem 2rem;
     border-bottom: 2px solid var(--border);
 }
 
@@ -452,9 +456,7 @@ h1 .dotnet {
 
 /* ===== CONTROLS ===== */
 .controls {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 1.5rem;
+    padding-block: 1.5rem;
     top: 0;
     background: rgba(5, 5, 5, 0.92);
     backdrop-filter: blur(12px);
@@ -606,9 +608,6 @@ input[type="text"]::placeholder {
 
 /* ===== SECTION DIVIDER ===== */
 .section-divider {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -1217,9 +1216,7 @@ input[type="text"]::placeholder {
 
 /* ===== FOOTER ===== */
 footer {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 3rem 1.5rem;
+    padding-block: 3rem;
     text-align: center;
     border-top: 2px solid var(--border);
 }
