@@ -23,6 +23,7 @@
         "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
         sans-serif;
     --font-display: "Space Grotesk", "Inter", sans-serif;
+    --tool-card-padding: 1.5rem;
 }
 
 * {
@@ -813,7 +814,7 @@ input[type="text"]::placeholder {
 /* ===== CARD ===== */
 .card {
     background: var(--surface);
-    padding: 1.5rem;
+    padding: var(--tool-card-padding);
     border-radius: .5rem;
     display: flex;
     flex-direction: column;
@@ -895,9 +896,16 @@ input[type="text"]::placeholder {
     gap: 0.75rem;
 }
 
-.card-title-wrap {
+.title-wrapper {
     display: flex;
-    flex-direction: row;
+    gap: 0.2rem;
+}
+
+.card-title-wrap {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     gap: 0.2rem;
 }
 
@@ -977,6 +985,14 @@ input[type="text"]::placeholder {
     transform: translateX(0);
 }
 
+.tool-badges {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    align-items: flex-start;
+}
+
 .featured-badge {
     background: var(--accent);
     color: #fff;
@@ -986,7 +1002,6 @@ input[type="text"]::placeholder {
     padding: 0.15rem 0.4rem;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    border-radius: 1px;
     flex-shrink: 0;
 }
 
@@ -999,7 +1014,6 @@ input[type="text"]::placeholder {
     padding: 0.15rem 0.4rem;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    border-radius: 1px;
     flex-shrink: 0;
 }
 
@@ -1010,7 +1024,6 @@ input[type="text"]::placeholder {
     padding: 0.15rem 0.4rem;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    border-radius: 1px;
     flex-shrink: 0;
 }
 
@@ -1021,7 +1034,7 @@ input[type="text"]::placeholder {
 
 .flag-badge.flag-abandoned {
     background: #3a3a3a;
-    color: #b5b5b5;
+    color: #e6e6e6;
     text-decoration: line-through;
 }
 
