@@ -26,6 +26,13 @@
     --tool-card-padding: 1.5rem;
 }
 
+@media (max-width: 768px) {
+    :root {
+        --tool-card-padding: 1rem;
+    }
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -54,6 +61,12 @@ button {
     max-width: 1400px;
     margin: 0 auto;
     padding-inline: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding-inline: 1rem;
+    }
 }
 
 .skip-link {
@@ -345,12 +358,26 @@ h1 .dotnet {
     border-left: 3px solid var(--accent);
 }
 
+@media (max-width: 768px) {
+    .tagline-block {
+        border-left: 0;
+        padding-left: 0;
+    }
+}
+
 .tagline-main {
     font-family: var(--font-display);
     font-size: 1.3rem;
     font-weight: 600;
     color: var(--text);
     letter-spacing: -0.01em;
+}
+
+@media (max-width: 768px) {
+    .tagline-main {
+        font-size: 1.2rem;
+        max-width: 300px;
+    }
 }
 
 .tagline-sub {
@@ -637,6 +664,14 @@ input[type="text"]::placeholder {
     background: var(--border);
 }
 
+@media (max-width: 768px) {
+    .grid {
+        background: transparent;
+        padding-inline: 0;
+        grid-template-columns: 1fr;
+    }
+}
+
 @media (max-width: 400px) {
     .grid {
         grid-template-columns: 1fr;
@@ -726,8 +761,22 @@ input[type="text"]::placeholder {
     background: var(--border-light);
 }
 
+@media (max-width: 768px) {
+
+    .tool-section--featured,
+    .tool-section--featured .grid {
+        background: transparent;
+    }
+}
+
 .tool-section--editors {
     background: #0a0a0a;
+}
+
+@media (max-width: 768px) {
+    .tool-section--editors {
+        background: transparent;
+    }
 }
 
 .tool-section--meets {
@@ -738,6 +787,12 @@ input[type="text"]::placeholder {
     background: #161616;
 }
 
+@media (max-width: 768px) {
+    .tool-section--meets .grid {
+        background: transparent;
+    }
+}
+
 /* SHOW MORE */
 .show-more-wrap {
     background-color: var(--border);
@@ -745,6 +800,12 @@ input[type="text"]::placeholder {
     width: 100%;
     margin: 0 auto;
     padding: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .show-more-wrap {
+        background: transparent;
+    }
 }
 
 .show-more-btn {
@@ -956,7 +1017,7 @@ input[type="text"]::placeholder {
 
 .card-title {
     font-family: var(--font-display);
-    font-size: 1.25rem;
+    font-size: clamp(0.8rem, 4vw, 1.25rem);
     font-weight: 700;
     color: var(--text);
     text-decoration: none;
@@ -1088,6 +1149,7 @@ input[type="text"]::placeholder {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: .2rem;
     padding-top: 0.75rem;
     border-top: 1px solid var(--border);
     margin-top: auto;
@@ -1135,6 +1197,7 @@ input[type="text"]::placeholder {
     padding: 0.2rem 0.4rem;
     border: 1px solid transparent;
     border-radius: 2px;
+    text-wrap: nowrap;
 }
 
 .gh-link:hover {
