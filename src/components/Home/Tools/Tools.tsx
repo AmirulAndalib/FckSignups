@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import type { ToolSections } from "../../hooks/useTools";
-import type { Category, LoadStatus, Tool } from "../../types";
+import type { ToolSections } from "../../../hooks/useTools";
+import type { Category, LoadStatus, Tool } from "../../../types";
 import { ToolCard } from "./ToolCard";
+import s from "./Tools.module.css";
 
-interface ToolGridProps {
+interface ToolsProps {
   sections: ToolSections;
   searchKeywords: string[];
   isSearching: boolean;
@@ -15,7 +16,13 @@ interface ToolGridProps {
   setSearchQuery: (query: string) => void;
 }
 
-export function ToolGrid({
+const sectionVariantClass = {
+  featured: s.toolSectionFeatured,
+  editors: s.toolSectionEditors,
+  meets: s.toolSectionMeets,
+} as const;
+
+export function Tools({
   sections,
   searchKeywords,
   isSearching,
@@ -25,18 +32,17 @@ export function ToolGrid({
   searchQuery,
   activeCategory,
   setSearchQuery,
-}: ToolGridProps) {
+}: ToolsProps) {
   const [showMore, setShowMore] = useState(false);
 
-  // Collapse "Meets Criteria" again whenever the filters change
   useEffect(() => {
     setShowMore(false);
   }, [searchQuery, activeCategory]);
 
   if (loadStatus === "loading") {
     return (
-      <main className="grid">
-        <div className="loading">Initializing index</div>
+      <main className={s.grid}>
+        <div className={s.loading}>Initializing index</div>
       </main>
     );
   }
@@ -47,34 +53,32 @@ export function ToolGrid({
 
   if (totalCount === 0) {
     return (
-      <main className="grid">
-        <div className="empty">
+      <main className={s.grid}>
+        <div className={s.empty}>
           <h3>NO MATCHES FOUND</h3>
+
           <p>Try a different search term or category filter.</p>
         </div>
       </main>
     );
   }
 
-  // Meets Criteria stays behind "Show More" only while browsing
   const hasCurated = featured.length > 0 || editorsPicks.length > 0;
   const meetsExpanded = !hasCurated || showMore;
 
   return (
-    <main className="tool-sections" id="main-content">
+    <main className={s.toolSections} id="main-content">
       {loadStatus == "error" && (
-        <div className="error">
+        <div className={s.error}>
           <h3>ERR_LOAD_FAILED</h3>
           <p>{errorMessage}</p>
-          <p style={{ marginTop: "1rem", fontSize: "0.8rem", opacity: 0.7 }}>
-            Falling back to embedded dataset...
-          </p>
+          <p className={s.errorFallback}>Falling back to embedded dataset...</p>
         </div>
       )}
 
       <>
         {featured.length > 0 && (
-          <Section
+          <ToolsSection
             label="Featured"
             variant="featured"
             tools={featured}
@@ -85,7 +89,7 @@ export function ToolGrid({
         )}
 
         {editorsPicks.length > 0 && (
-          <Section
+          <ToolsSection
             label="Editor's Picks"
             variant="editors"
             tools={editorsPicks}
@@ -97,7 +101,7 @@ export function ToolGrid({
 
         {meetsCriteria.length > 0 &&
           (meetsExpanded || isSearching ? (
-            <Section
+            <ToolsSection
               label="Meets Criteria"
               variant="meets"
               tools={meetsCriteria}
@@ -106,10 +110,10 @@ export function ToolGrid({
               setSearchQuery={setSearchQuery}
             />
           ) : (
-            <div className="show-more-wrap">
+            <div className={s.showMoreWrap}>
               <button
                 type="button"
-                className="show-more-btn"
+                className={s.showMoreBtn}
                 onClick={() => setShowMore(true)}
               >
                 <strong>Show More </strong>
@@ -125,7 +129,7 @@ export function ToolGrid({
   );
 }
 
-interface SectionProps {
+interface ToolsSectionProps {
   label: string;
   variant: "featured" | "editors" | "meets";
   tools: Tool[];
@@ -134,18 +138,19 @@ interface SectionProps {
   setSearchQuery: (query: string) => void;
 }
 
-function Section({
+function ToolsSection({
   label,
   variant,
   tools,
   categories,
   searchKeywords,
   setSearchQuery,
-}: SectionProps) {
+}: ToolsSectionProps) {
   return (
-    <section className={`tool-section tool-section--${variant}`}>
-      <div className="section-divider">{label}</div>
-      <div className="grid border-glow">
+    <section className={`${s.toolSection} ${sectionVariantClass[variant]}`}>
+      <div className={s.sectionDivider}>{label}</div>
+
+      <div className={s.grid}>
         {tools.map((tool) => (
           <ToolCard
             key={tool.id}

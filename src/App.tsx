@@ -4,7 +4,7 @@ import { ReportFloatingWidget } from "./components/Home/ReportFloatingWidget/Rep
 import { ScrollToTopButton } from "./components/Home/ScrollToTopButton";
 import SkipContentLink from "./components/Home/SkipContentLink";
 import { ToolFilters } from "./components/Home/ToolFilters/ToolFilters";
-import { ToolGrid } from "./components/Home/ToolGrid";
+import { Tools } from "./components/Home/Tools/Tools";
 import { MODAL_CONFIGS } from "./constants/ModalConfigs";
 import { ModalProvider } from "./hooks/useModal";
 import { ReportProvider } from "./hooks/useReport";
@@ -54,7 +54,7 @@ export default function App() {
         )}
 
         <ReportProvider>
-          <ToolGrid
+          <Tools
             sections={sections}
             searchKeywords={searchKeywords}
             isSearching={isSearching}

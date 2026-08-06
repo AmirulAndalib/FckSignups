@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { ExternalIcon, GitHubIcon, StarIcon } from "../../constants/icons";
-import { useModal } from "../../hooks/useModal";
-import { useReport } from "../../hooks/useReport";
-import type { Category, Tool } from "../../types";
-import { formatStars } from "../../utils/formatters";
-import { highlightMatches } from "../../utils/highlight";
-import { Toast } from "./Toast";
+import { ExternalIcon, GitHubIcon, StarIcon } from "../../../constants/icons";
+import { useModal } from "../../../hooks/useModal";
+import { useReport } from "../../../hooks/useReport";
+import type { Category, Tool } from "../../../types";
+import { formatStars } from "../../../utils/formatters";
+import { highlightMatches } from "../../../utils/highlight";
+import { Toast } from "../Toast";
+import s from "./Tools.module.css";
 
 interface ToolCardProps {
   tool: Tool;
@@ -32,7 +33,6 @@ export function ToolCard({
     showModalWithID("report-tool", { toolId: tool.id });
   }
 
-  // Handle removing the toast container afte ra certain timeout
   function handleTimedToast() {
     setToastVisible(!toastVisible);
 
@@ -52,11 +52,13 @@ export function ToolCard({
         />
       )}
       <article
-        className={
-          "card" +
-          (tool.section === "featured" ? " featured" : "") +
-          (tool.notRecommendedReason !== undefined ? " not-recommended" : "") // if there the key exists in the object
-        }
+        className={[
+          s.card,
+          tool.section === "featured" ? s.cardFeatured : "",
+          tool.notRecommendedReason !== undefined ? s.cardNotRecommended : "",
+        ]
+          .filter(Boolean)
+          .join(" ")}
         data-highlighted={reportMode}
         onClick={() =>
           reportMode
@@ -64,17 +66,20 @@ export function ToolCard({
             : window.open(tool.url, "_blank", "noopener,noreferrer")
         }
       >
-        <div className="card-header">
-          <div className="card-title-wrap">
-            <div className="title-wrapper">
-              <div className="card-category-icon" data-category={tool.category}>
+        <div className={s.cardHeader}>
+          <div className={s.cardTitleWrap}>
+            <div className={s.titleWrapper}>
+              <div
+                className={s.cardCategoryIcon}
+                data-category={tool.category}
+              >
                 <span>{cat.icon}</span>
               </div>
               <a
                 href={tool.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="card-title"
+                className={s.cardTitle}
               >
                 {highlightMatches(tool.name, searchKeywords)}
                 <ExternalIcon />
@@ -89,46 +94,49 @@ export function ToolCard({
                 }}
                 title={tool.notRecommendedReason}
               >
-                <svg className="feather-alert-circle" aria-hidden="true">
+                <svg className={s.featherAlertCircle} aria-hidden="true">
                   <use href="/icons-sprite.svg#exclamation-mark" />
                 </svg>
               </div>
             )}
           </div>
 
-          <div className="tool-badges">
+          <div className={s.toolBadges}>
             {tool.flag === "abandoned" && (
               <span
-                className="flag-badge flag-abandoned"
+                className={`${s.flagBadge} ${s.flagAbandoned}`}
                 title="This project is no longer maintained"
               >
                 Abandoned
               </span>
             )}
             {tool.section === "editors-pick" && (
-              <span className="editors-badge">Editor's Pick</span>
+              <span className={s.editorsBadge}>Editor's Pick</span>
             )}
             {tool.section === "featured" && (
-              <span className="featured-badge">Featured</span>
+              <span className={s.featuredBadge}>Featured</span>
             )}
             {tool.flag === "new" && (
-              <span className="flag-badge flag-new" title="Brand new project">
+              <span
+                className={`${s.flagBadge} ${s.flagNew}`}
+                title="Brand new project"
+              >
                 New
               </span>
             )}
           </div>
         </div>
 
-        <p className="card-desc">
+        <p className={s.cardDesc}>
           {highlightMatches(tool.description, searchKeywords)}
         </p>
 
-        <ul className="card-tags">
+        <ul className={s.cardTags}>
           {tool.tags.map((tag) => (
             <li key={tag}>
               <button
                 type="button"
-                className="tag"
+                className={s.tag}
                 aria-label={`Filter tools by ${tag.replace(/-/g, " ")}`}
                 onClick={(e) => {
                   e.stopPropagation();
@@ -141,13 +149,13 @@ export function ToolCard({
           ))}
         </ul>
 
-        <div className="card-footer">
-          <div className="footer-left">
-            <span className="category-pill">
+        <div className={s.cardFooter}>
+          <div className={s.footerLeft}>
+            <span className={s.categoryPill}>
               {cat.icon} {cat.name}
             </span>
             {!!tool.stars && (
-              <span className="stars">
+              <span className={s.stars}>
                 <StarIcon />
                 {formatStars(tool.stars)}
               </span>
@@ -160,7 +168,7 @@ export function ToolCard({
               target="_blank"
               onClick={(e) => e.stopPropagation()}
               rel="noopener noreferrer"
-              className="gh-link"
+              className={s.ghLink}
               title={`View ${tool.name} repository on GitHub`}
               aria-label={`View ${tool.name} repository on GitHub`}
             >
@@ -168,7 +176,7 @@ export function ToolCard({
               {tool.license ?? "SRC"}
             </a>
           ) : (
-            <span className="web-only">WEB_ONLY</span>
+            <span className={s.webOnly}>WEB_ONLY</span>
           )}
         </div>
       </article>

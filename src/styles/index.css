@@ -23,15 +23,7 @@
 		"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
 		sans-serif;
 	--font-display: "Space Grotesk", "Inter", sans-serif;
-	--tool-card-padding: 1.5rem;
 }
-
-@media (max-width: 768px) {
-	:root {
-		--tool-card-padding: 1rem;
-	}
-}
-
 
 * {
 	margin: 0;
