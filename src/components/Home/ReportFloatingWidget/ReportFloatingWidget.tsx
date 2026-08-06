@@ -2,7 +2,7 @@ import { useState } from "react";
 import { ChatIcon } from "../../../constants/icons";
 import { useModal } from "../../../hooks/useModal";
 import { useReport } from "../../../hooks/useReport";
-import { Toast } from "../Toast";
+import { Toast } from "../../Shared/Feedback/Toast/Toast";
 import s from "./ReportFloatingWidget.module.css";
 
 export function ReportFloatingWidget() {

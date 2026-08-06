@@ -1,10 +1,10 @@
 import { Footer } from "./components/Home/Footer/Footer";
 import { Header } from "./components/Home/Header/Header";
 import { ReportFloatingWidget } from "./components/Home/ReportFloatingWidget/ReportFloatingWidget";
-import { ScrollToTopButton } from "./components/Home/ScrollToTopButton";
-import SkipContentLink from "./components/Home/SkipContentLink";
 import { ToolFilters } from "./components/Home/ToolFilters/ToolFilters";
 import { Tools } from "./components/Home/Tools/Tools";
+import { ScrollToTopButton } from "./components/Shared/Buttons/ScrollToTopButton/ScrollToTopButton";
+import SkipContentLink from "./components/Shared/Links/SkipContentLink/SkipContentLink";
 import { MODAL_CONFIGS } from "./constants/ModalConfigs";
 import { ModalProvider } from "./hooks/useModal";
 import { ReportProvider } from "./hooks/useReport";

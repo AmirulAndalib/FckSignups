@@ -9,7 +9,7 @@ import { useReport } from "../../../../hooks/useReport";
 import type { Category, Tool } from "../../../../types";
 import { formatStars } from "../../../../utils/formatters";
 import { highlightMatches } from "../../../../utils/highlight";
-import { Toast } from "../../Toast";
+import { Toast } from "../../../Shared/Feedback/Toast/Toast";
 import s from "./ToolCard.module.css";
 
 interface ToolCardProps {
