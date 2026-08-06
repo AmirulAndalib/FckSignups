@@ -1,5 +1,5 @@
 import { Footer } from "./components/Home/Footer/Footer";
-import { Header } from "./components/Home/Header";
+import { Header } from "./components/Home/Header/Header";
 import { Report } from "./components/Home/Report";
 import { ScrollToTopButton } from "./components/Home/ScrollToTopButton";
 import SkipContentLink from "./components/Home/SkipContentLink";

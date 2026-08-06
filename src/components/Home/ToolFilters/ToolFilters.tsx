@@ -71,11 +71,11 @@ export function ToolFilters({
 
         <div className={s.resultsCount} aria-live="polite">
           SHOWING{" "}
-          <span className={s.white}>
+          <span className="white">
             {String(filteredCount).padStart(2, "0")}
           </span>{" "}
           OF{" "}
-          <span className={s.white}>
+          <span className="white">
             {String(allTools.length).padStart(2, "0")}
           </span>{" "}
           TOOLS
