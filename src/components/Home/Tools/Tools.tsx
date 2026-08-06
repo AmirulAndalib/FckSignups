@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import type { ToolSections } from "../../../hooks/useTools";
 import type { Category, LoadStatus, Tool } from "../../../types";
-import { ToolCard } from "./ToolCard";
+import { ToolCard } from "./ToolCard/ToolCard";
 import s from "./Tools.module.css";
 
 interface ToolsProps {

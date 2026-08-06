@@ -1,12 +1,16 @@
 import { useState } from "react";
-import { ExternalIcon, GitHubIcon, StarIcon } from "../../../constants/icons";
-import { useModal } from "../../../hooks/useModal";
-import { useReport } from "../../../hooks/useReport";
-import type { Category, Tool } from "../../../types";
-import { formatStars } from "../../../utils/formatters";
-import { highlightMatches } from "../../../utils/highlight";
-import { Toast } from "../Toast";
-import s from "./Tools.module.css";
+import {
+  ExternalIcon,
+  GitHubIcon,
+  StarIcon,
+} from "../../../../constants/icons";
+import { useModal } from "../../../../hooks/useModal";
+import { useReport } from "../../../../hooks/useReport";
+import type { Category, Tool } from "../../../../types";
+import { formatStars } from "../../../../utils/formatters";
+import { highlightMatches } from "../../../../utils/highlight";
+import { Toast } from "../../Toast";
+import s from "./ToolCard.module.css";
 
 interface ToolCardProps {
   tool: Tool;
@@ -69,10 +73,7 @@ export function ToolCard({
         <div className={s.cardHeader}>
           <div className={s.cardTitleWrap}>
             <div className={s.titleWrapper}>
-              <div
-                className={s.cardCategoryIcon}
-                data-category={tool.category}
-              >
+              <div className={s.cardCategoryIcon} data-category={tool.category}>
                 <span>{cat.icon}</span>
               </div>
               <a
