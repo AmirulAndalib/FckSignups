@@ -1,4 +1,4 @@
-import { Footer } from "./components/Home/Footer";
+import { Footer } from "./components/Home/Footer/Footer";
 import { Header } from "./components/Home/Header";
 import { Report } from "./components/Home/Report";
 import { ScrollToTopButton } from "./components/Home/ScrollToTopButton";
