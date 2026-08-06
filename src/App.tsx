@@ -1,6 +1,6 @@
 import { Footer } from "./components/Home/Footer/Footer";
 import { Header } from "./components/Home/Header/Header";
-import { Report } from "./components/Home/Report";
+import { ReportFloatingWidget } from "./components/Home/ReportFloatingWidget/ReportFloatingWidget";
 import { ScrollToTopButton } from "./components/Home/ScrollToTopButton";
 import SkipContentLink from "./components/Home/SkipContentLink";
 import { ToolFilters } from "./components/Home/ToolFilters/ToolFilters";
@@ -66,7 +66,7 @@ export default function App() {
             setSearchQuery={setSearchQuery}
           />
 
-          <Report />
+          <ReportFloatingWidget />
         </ReportProvider>
         <ScrollToTopButton />
         <Footer />
