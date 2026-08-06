@@ -1,9 +1,9 @@
-import { Controls } from "./components/Home/Controls";
 import { Footer } from "./components/Home/Footer";
 import { Header } from "./components/Home/Header";
 import { Report } from "./components/Home/Report";
 import { ScrollToTopButton } from "./components/Home/ScrollToTopButton";
 import SkipContentLink from "./components/Home/SkipContentLink";
+import { ToolFilters } from "./components/Home/ToolFilters/ToolFilters";
 import { ToolGrid } from "./components/Home/ToolGrid";
 import { MODAL_CONFIGS } from "./constants/ModalConfigs";
 import { ModalProvider } from "./hooks/useModal";
@@ -38,7 +38,7 @@ export default function App() {
           setSearchQuery={setSearchQuery}
         />
 
-        <Controls
+        <ToolFilters
           categories={categories}
           activeCategory={activeCategory}
           searchQuery={searchQuery}
