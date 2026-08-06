@@ -42,10 +42,10 @@ export function Header({
         <div className={s.headerGrid}>
           <div className={s.brandBlock}>
             <h1 className={s.brandTitle} onClick={() => setSearchQuery("")}>
-              <span className="fck glitch" data-text="NO">
+              <span className={`${s.fck} ${s.glitch}`} data-text="NO">
                 NO
               </span>
-              <span className="signups">Signups</span>
+              <span>Signups</span>
               <span className={s.dotnet}>.net</span>
             </h1>
             <h2 className={s.formerlyFcksignups}>(formerly FckSignups.com)</h2>

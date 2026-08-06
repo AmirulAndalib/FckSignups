@@ -60,6 +60,22 @@
   cursor: pointer;
 }
 
+.brandTitle .fck {
+	color: var(--accent);
+	text-shadow: 3px 3px 0 rgba(255, 0, 64, 0.3);
+	position: relative;
+}
+
+.brandTitle .fck::after {
+	content: "NO";
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	color: transparent;
+	-webkit-text-stroke: 1px rgba(255, 0, 64, 0.2);
+	z-index: -1;
+}
+
 .brandTitle .dotnet {
   font-size: 2rem;
   color: var(--accent-4);
@@ -146,4 +162,82 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+}
+
+/* ===== GLITCH ===== */
+.glitch {
+	position: relative;
+}
+
+.glitch::before,
+.glitch::after {
+	content: attr(data-text);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+}
+
+.glitch:hover::before {
+	animation: glitch-1 0.3s infinite;
+	color: var(--accent-4);
+	opacity: 0.8;
+	z-index: -1;
+}
+
+.glitch:hover::after {
+	animation: glitch-2 0.3s infinite;
+	color: var(--accent);
+	opacity: 0.8;
+	z-index: -2;
+}
+
+@keyframes glitch-1 {
+
+	0%,
+	100% {
+		transform: translate(0);
+	}
+
+	20% {
+		transform: translate(-2px, 2px);
+	}
+
+	40% {
+		transform: translate(2px, -2px);
+	}
+
+	60% {
+		transform: translate(-1px, 1px);
+	}
+
+	80% {
+		transform: translate(1px, -1px);
+	}
+}
+
+@keyframes glitch-2 {
+
+	0%,
+	100% {
+		transform: translate(0);
+	}
+
+	20% {
+		transform: translate(2px, -2px);
+	}
+
+	40% {
+		transform: translate(-2px, 2px);
+	}
+
+	60% {
+		transform: translate(1px, -1px);
+	}
+
+	80% {
+		transform: translate(-1px, 1px);
+	}
 }
