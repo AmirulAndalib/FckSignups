@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
-import { FALLBACK_REPO_STARS } from "../constants/fallbackData";
-import { REPO_URL } from "../constants/global";
-import { useModal } from "../hooks/useModal";
+import { FALLBACK_REPO_STARS } from "../../constants/fallbackData";
+import { REPO_URL } from "../../constants/global";
+import { useModal } from "../../hooks/useModal";
 
 interface HeaderProps {
   toolCount: number;

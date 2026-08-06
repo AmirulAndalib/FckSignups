@@ -1,5 +1,5 @@
-import { ExternalIcon } from "../constants/icons";
-import { useModal } from "../hooks/useModal";
+import { ExternalIcon } from "../../constants/icons";
+import { useModal } from "../../hooks/useModal";
 
 export function Footer() {
   const { showModalWithID } = useModal();
@@ -10,8 +10,8 @@ export function Footer() {
           <div className="footer-col">
             <h3>About</h3>
             <p>
-              NoSignups (formerly FckSignups) is a curated directory of tools that respect your time.
-              No signups, no spam, no dark patterns.
+              NoSignups (formerly FckSignups) is a curated directory of tools
+              that respect your time. No signups, no spam, no dark patterns.
             </p>
           </div>
           <div className="footer-col">

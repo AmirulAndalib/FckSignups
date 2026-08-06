@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import type { ToolSections } from "../hooks/useTools";
-import type { Tool, Category, LoadStatus } from "../types";
+import type { ToolSections } from "../../hooks/useTools";
+import type { Category, LoadStatus, Tool } from "../../types";
 import { ToolCard } from "./ToolCard";
 
 interface ToolGridProps {
@@ -42,7 +42,8 @@ export function ToolGrid({
   }
 
   const { featured, editorsPicks, meetsCriteria } = sections;
-  const totalCount = featured.length + editorsPicks.length + meetsCriteria.length;
+  const totalCount =
+    featured.length + editorsPicks.length + meetsCriteria.length;
 
   if (totalCount === 0) {
     return (
@@ -71,53 +72,55 @@ export function ToolGrid({
         </div>
       )}
 
-          <>
-            {featured.length > 0 && (
-              <Section
-                label="Featured"
-                variant="featured"
-                tools={featured}
-                categories={categories}
-                searchKeywords={searchKeywords}
-                setSearchQuery={setSearchQuery}
-              />
-            )}
+      <>
+        {featured.length > 0 && (
+          <Section
+            label="Featured"
+            variant="featured"
+            tools={featured}
+            categories={categories}
+            searchKeywords={searchKeywords}
+            setSearchQuery={setSearchQuery}
+          />
+        )}
 
-            {editorsPicks.length > 0 && (
-              <Section
-                label="Editor's Picks"
-                variant="editors"
-                tools={editorsPicks}
-                categories={categories}
-                searchKeywords={searchKeywords}
-                setSearchQuery={setSearchQuery}
-              />
-            )}
+        {editorsPicks.length > 0 && (
+          <Section
+            label="Editor's Picks"
+            variant="editors"
+            tools={editorsPicks}
+            categories={categories}
+            searchKeywords={searchKeywords}
+            setSearchQuery={setSearchQuery}
+          />
+        )}
 
-            {meetsCriteria.length > 0 &&
-              ((meetsExpanded || isSearching)? (
-                <Section
-                  label="Meets Criteria"
-                  variant="meets"
-                  tools={meetsCriteria}
-                  categories={categories}
-                  searchKeywords={searchKeywords}
-                  setSearchQuery={setSearchQuery}
-                />
-              ) : (
-                <div className="show-more-wrap">
-                  <button
-                    type="button"
-                    className="show-more-btn"
-                    onClick={() => setShowMore(true)}
-                  >
-                    <strong>Show More </strong><br/>{meetsCriteria.length} more{" "}
-                    {meetsCriteria.length === 1 ? "tool meets" : "tools meet"}{" "}
-                    the criteria
-                  </button>
-                </div>
-              ))}
-          </>
+        {meetsCriteria.length > 0 &&
+          (meetsExpanded || isSearching ? (
+            <Section
+              label="Meets Criteria"
+              variant="meets"
+              tools={meetsCriteria}
+              categories={categories}
+              searchKeywords={searchKeywords}
+              setSearchQuery={setSearchQuery}
+            />
+          ) : (
+            <div className="show-more-wrap">
+              <button
+                type="button"
+                className="show-more-btn"
+                onClick={() => setShowMore(true)}
+              >
+                <strong>Show More </strong>
+                <br />
+                {meetsCriteria.length} more{" "}
+                {meetsCriteria.length === 1 ? "tool meets" : "tools meet"} the
+                criteria
+              </button>
+            </div>
+          ))}
+      </>
     </main>
   );
 }

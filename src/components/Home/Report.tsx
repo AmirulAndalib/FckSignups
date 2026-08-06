@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { Toast } from "../components/Toast";
-import { ChatIcon } from "../constants/icons";
-import { useModal } from "../hooks/useModal";
-import { useReport } from "../hooks/useReport";
+import { ChatIcon } from "../../constants/icons";
+import { useModal } from "../../hooks/useModal";
+import { useReport } from "../../hooks/useReport";
+import { Toast } from "./Toast";
 
 export function Report() {
   const { reportMode, setReportMode } = useReport();

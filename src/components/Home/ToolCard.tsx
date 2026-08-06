@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { ExternalIcon, GitHubIcon, StarIcon } from "../constants/icons";
-import { useModal } from "../hooks/useModal";
-import { useReport } from "../hooks/useReport";
-import type { Category, Tool } from "../types";
-import { formatStars } from "../utils/formatters";
-import { highlightMatches } from "../utils/highlight";
+import { ExternalIcon, GitHubIcon, StarIcon } from "../../constants/icons";
+import { useModal } from "../../hooks/useModal";
+import { useReport } from "../../hooks/useReport";
+import type { Category, Tool } from "../../types";
+import { formatStars } from "../../utils/formatters";
+import { highlightMatches } from "../../utils/highlight";
 import { Toast } from "./Toast";
 
 interface ToolCardProps {

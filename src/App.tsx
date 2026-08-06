@@ -1,10 +1,10 @@
-import { Controls } from "./components/Controls";
-import { Footer } from "./components/Footer";
-import { Header } from "./components/Header";
-import { Report } from "./components/Report";
-import { ScrollToTopButton } from "./components/ScrollToTopButton";
-import SkipContentLink from "./components/SkipContentLink";
-import { ToolGrid } from "./components/ToolGrid";
+import { Controls } from "./components/Home/Controls";
+import { Footer } from "./components/Home/Footer";
+import { Header } from "./components/Home/Header";
+import { Report } from "./components/Home/Report";
+import { ScrollToTopButton } from "./components/Home/ScrollToTopButton";
+import SkipContentLink from "./components/Home/SkipContentLink";
+import { ToolGrid } from "./components/Home/ToolGrid";
 import { MODAL_CONFIGS } from "./constants/ModalConfigs";
 import { ModalProvider } from "./hooks/useModal";
 import { ReportProvider } from "./hooks/useReport";
