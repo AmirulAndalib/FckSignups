@@ -131,7 +131,7 @@
   padding: 1rem 1.5rem;
   background: var(--surface);
   line-height: 1.3rem;
-  border: 1px dashed var(--accent);
+  border: 0;
   border-radius: 0.5rem;
   color: var(--text-muted);
   font-family: var(--font-mono);
@@ -139,34 +139,31 @@
   text-transform: uppercase;
   letter-spacing: 0.1em;
   cursor: pointer;
-  transition: all 0.2s ease;
   z-index: 10;
-}
-
-@property --degree {
-  syntax: "<angle>";
-  inherits: false;
-  initial-value: 0deg;
+  overflow: hidden;
+  transition: color 0.2s ease;
 }
 
 .showMoreBtn::before {
   content: "";
   position: absolute;
-  overflow: hidden;
-  inset: -2px;
-  background: conic-gradient(from var(--degree), #00e1ff, #ff1e69 50%, #00e1ff);
-  padding: 10px;
-  border-radius: 1rem;
-  animation: changingBgColor 5s linear infinite;
+  top: 50%;
+  left: 50%;
+  width: 150%;
+  padding-bottom: 150%;
+  background: conic-gradient(#00e1ff, #ff1e69 50%, #00e1ff);
+  border-radius: 50%;
   z-index: -2;
-  isolation: isolate;
+  transform: translate(-50%, -50%) rotate(0deg);
+  animation: rotateGlow 5s linear infinite;
+  will-change: transform;
 }
 
 .showMoreBtn::after {
   content: "";
   position: absolute;
-  inset: 1px;
-  border-radius: calc(1rem - 2px);
+  inset: 2px;
+  border-radius: calc(0.5rem - 2px);
   background: var(--surface);
   z-index: -1;
 }
@@ -177,9 +174,13 @@
 }
 
 .showMoreBtn:hover {
-  border-color: var(--accent);
   color: var(--text);
-  background: var(--surface);
+}
+
+@keyframes rotateGlow {
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
 
 /* ===== STATES ===== */
@@ -229,12 +230,6 @@
   margin-top: 1rem;
   font-size: 0.8rem;
   opacity: 0.7;
-}
-
-@keyframes changingBgColor {
-  to {
-    --degree: 360deg;
-  }
 }
 
 @keyframes dots {
