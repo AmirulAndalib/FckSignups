@@ -3313,23 +3313,6 @@
       "section": "meets-criteria"
     },
     {
-      "id": "openvid",
-      "name": "Openvid",
-      "description": "Platform designed to transform raw screen recordings into polished, high-quality demonstration videos",
-      "url": "https://openvid.dev/en",
-      "category": "media",
-      "tags": [
-        "video-editor",
-        "demonstration-maker",
-        "tutorial-maker"
-      ],
-      "github": "https://github.com/CristianOlivera1/openvid",
-      "license": "NC",
-      "stars": 1538,
-      "addedAt": "2026-07-07",
-      "section": "featured"
-    },
-    {
       "id": "faviconapi",
       "name": "FaviconAPI",
       "description": "Get the highest resolution favicon for any domain or look up a service icon by name.",
