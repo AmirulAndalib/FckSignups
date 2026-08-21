@@ -4047,6 +4047,102 @@
       "stars": 1948,
       "addedAt": "2026-08-03",
       "section": "editors-pick"
+    },
+    {
+      "id": "aperisolve",
+      "name": "Aperi'Solve",
+      "description": "Image metadata and forensics analysis tool",
+      "url": "https://www.aperisolve.com/",
+      "category": "privacy",
+      "tags": [
+        "image-metadata",
+        "metadata-analysis",
+        "image-forensic"
+      ],
+      "github": "https://github.com/Zeecka/AperiSolve",
+      "license": "MIT",
+      "stars": 837,
+      "addedAt": "2026-08-21",
+      "section": "meets-criteria"
+    },
+    {
+      "id": "aura-gradients",
+      "name": "Aura gradients",
+      "description": "200+ layered, atmospheric gradients built from soft blend modes",
+      "url": "https://auragradients.vercel.app/",
+      "category": "design",
+      "tags": [
+        "gradients",
+        "backgrounds"
+      ],
+      "github": "https://github.com/CristianOlivera1/Aura",
+      "license": "MIT",
+      "stars": 354,
+      "addedAt": "2026-08-21",
+      "section": "meets-criteria"
+    },
+    {
+      "id": "windhawk",
+      "name": "Windhawk",
+      "description": "The customization marketplace for Windows and programs",
+      "url": "https://windhawk.net/",
+      "category": "lists",
+      "tags": [
+        "windows-customization",
+        "customization-library"
+      ],
+      "github": "https://github.com/ramensoftware/windhawk",
+      "license": "GPL-3.0",
+      "stars": 8754,
+      "addedAt": "2026-08-21",
+      "section": "meets-criteria"
+    },
+    {
+      "id": "editorapdf",
+      "name": "EditoraPDF",
+      "description": "A minimal PDF. Note: doesn't modify existing PDF text.",
+      "url": "https://editorapdf.com",
+      "category": "utilities",
+      "tags": [
+        "pdf-editor",
+        "pdf-signature"
+      ],
+      "github": "https://github.com/affsquadDevs/editorapdf",
+      "license": "MIT",
+      "stars": 12,
+      "addedAt": "2026-08-21",
+      "section": "meets-criteria"
+    },
+    {
+      "id": "readlocal",
+      "name": "ReadLocal",
+      "description": "A Markdown reader that reads .md files & folders",
+      "url": "https://readlocal.app/",
+      "category": "utilities",
+      "tags": [
+        "markdown-reader"
+      ],
+      "github": "https://github.com/Imranpranto/readlocal-local-markdown-md-file-renderer",
+      "license": "?",
+      "stars": 4,
+      "addedAt": "2026-08-21",
+      "section": "meets-criteria"
+    },
+    {
+      "id": "openplan3d",
+      "name": "openplan3d",
+      "description": "Design floor plans in an intuitive 2D editor, then instantly preview them in a fully navigable 3D view",
+      "url": "https://app.openplan3d.com",
+      "category": "utilities",
+      "tags": [
+        "floor-designer",
+        "floor-planner"
+      ],
+      "github": "https://github.com/laanlabs/openPlan3D",
+      "license": "MIT",
+      "stars": 109,
+      "addedAt": "2026-08-21",
+      "section": "meets-criteria"
     }
   ]
 }
