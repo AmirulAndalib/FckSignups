@@ -3,6 +3,7 @@
 	bottom: 10%;
 	right: 15%;
 	animation: idle-float 3s linear infinite alternate;
+	z-index: 20;
 }
 
 .button {
