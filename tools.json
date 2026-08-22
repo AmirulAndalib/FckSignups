@@ -4143,6 +4143,102 @@
       "stars": 109,
       "addedAt": "2026-08-21",
       "section": "meets-criteria"
+    },
+    {
+      "id": "forge",
+      "name": "Forge",
+      "description": "Use Ai models right now, for free and privately, without setup.",
+      "url": "https://modelplayground.dev",
+      "category": "productivity",
+      "tags": [
+        "ai-tools",
+        "llm"
+      ],
+      "github": "https://github.com/AminMusah/forge",
+      "license": "MIT",
+      "stars": 0,
+      "addedAt": "2026-08-21",
+      "section": "meets-criteria"
+    },
+    {
+      "id": "fit-stats",
+      "name": "FIT Stats",
+      "description": "View and analyze FIT/GPX tracks right in the browser: bulk upload, map, summary, metrics and charts",
+      "url": "https://fit.igroza.su",
+      "category": "utilities",
+      "tags": [
+        "gpx-viewer",
+        "fit-viewer"
+      ],
+      "github": "https://github.com/iGroza/fit-stats",
+      "license": "?",
+      "stars": 0,
+      "addedAt": "2026-08-21",
+      "section": "meets-criteria"
+    },
+    {
+      "id": "katbin",
+      "name": "katb.in",
+      "description": "Share text & logs with a short URL",
+      "url": "https://katb.in/",
+      "category": "utilities",
+      "tags": [
+        "text-share",
+        "logs-share"
+      ],
+      "github": "https://github.com/sphericalkat/katbin",
+      "license": "?",
+      "stars": 206,
+      "addedAt": "2026-08-21",
+      "section": "meets-criteria"
+    },
+    {
+      "id": "frappe-playground",
+      "name": "Frappe Playground",
+      "description": "WSAM powered frappe playground running entirely in the browser.",
+      "url": "https://frappe-playground.lubus.in/",
+      "category": "utilities",
+      "tags": [
+        "frappe"
+      ],
+      "github": "https://github.com/lubusIN/frappe-playground",
+      "license": "?",
+      "stars": 36,
+      "addedAt": "2026-08-21",
+      "section": "meets-criteria"
+    },
+    {
+      "id": "keyfont",
+      "name": "Keyfont",
+      "description": "Convert and inspect fonts locally in your browser",
+      "url": "https://keypdf.net/keyfont",
+      "category": "utilities",
+      "tags": [
+        "font-converter"
+      ],
+      "github": "https://github.com/KeyPDF/KeyFont",
+      "license": "Custom",
+      "stars": 5,
+      "addedAt": "2026-08-21",
+      "section": "meets-criteria"
+    },
+    {
+      "id": "erikraft-drop",
+      "name": "ErikrafT Drop",
+      "description": "Fast file-transfer solution with support for Tor, and LAN messaging",
+      "url": "https://drop.erikraft.com/",
+      "category": "utilities",
+      "tags": [
+        "file-transfer",
+        "file-share",
+        "tor",
+        "lan-chat"
+      ],
+      "github": "Custom",
+      "license": "GPL-3.0",
+      "stars": 17,
+      "addedAt": "2026-08-21",
+      "section": "meets-criteria"
     }
   ]
 }
