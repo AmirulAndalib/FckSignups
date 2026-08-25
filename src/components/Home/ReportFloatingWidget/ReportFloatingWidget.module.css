@@ -1,7 +1,7 @@
 .wrapper {
 	position: fixed;
-	bottom: 10%;
-	right: 15%;
+	bottom: 20px;
+    right: 20px;
 	animation: idle-float 3s linear infinite alternate;
 }
 
