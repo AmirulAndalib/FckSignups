@@ -1,8 +1,14 @@
 .wrapper {
-	position: fixed;
-	bottom: 5%;
-    right: 5%;
-	animation: idle-float 3s linear infinite alternate;
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    bottom: 90px;
+    right: 24px;
+  }
 }
 
 .button {
