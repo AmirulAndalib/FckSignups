@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import type { ToolSections } from "../../../hooks/useTools";
 import type { Category, LoadStatus, Tool } from "../../../types";
+import ShowMoreButton from "../../Shared/Buttons/ShowMoreButton/ShowMoreButton";
 import { ToolCard } from "./ToolCard/ToolCard";
 import s from "./Tools.module.css";
 
@@ -110,19 +111,10 @@ export function Tools({
               setSearchQuery={setSearchQuery}
             />
           ) : (
-            <div className={s.showMoreWrap}>
-              <button
-                type="button"
-                className={s.showMoreBtn}
-                onClick={() => setShowMore(true)}
-              >
-                <strong>Show More </strong>
-                <br />
-                {meetsCriteria.length} more{" "}
-                {meetsCriteria.length === 1 ? "tool meets" : "tools meet"} the
-                criteria
-              </button>
-            </div>
+            <ShowMoreButton
+              setShowMore={setShowMore}
+              meetsCriteria={meetsCriteria}
+            />
           ))}
       </>
     </main>
