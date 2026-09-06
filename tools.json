@@ -1605,7 +1605,7 @@
       "license": "GPL-3.0",
       "stars": 39819,
       "addedAt": "2026-06-17",
-      "section": "meets-criteria"
+      "section": "editors-pick"
     },
     {
       "id": "flowchartfun",
@@ -2653,7 +2653,7 @@
       "license": "MIT",
       "stars": 187621,
       "addedAt": "2026-06-26",
-      "section": "meets-criteria"
+      "section": "editors-pick"
     },
     {
       "id": "scratch-tabs",
@@ -3294,7 +3294,7 @@
       "license": "?",
       "stars": 10688,
       "addedAt": "2026-07-07",
-      "section": "meets-criteria"
+      "section": "editors-pick"
     },
     {
       "id": "openreel",
@@ -3310,7 +3310,7 @@
       "license": "MIT",
       "stars": 4375,
       "addedAt": "2026-07-07",
-      "section": "meets-criteria"
+      "section": "featured"
     },
     {
       "id": "faviconapi",
