@@ -1,9 +1,15 @@
 .wrapper {
-	position: fixed;
-	bottom: 10%;
-	right: 15%;
-	animation: idle-float 3s linear infinite alternate;
-	z-index: 20;
+  position: fixed;
+  bottom: 100px;
+  right: 27px;
+  animation: idle-float 3s linear infinite alternate;
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    bottom: 90px;
+    right: 24px;
+  }
 }
 
 .button {

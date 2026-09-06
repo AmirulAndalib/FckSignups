@@ -54,9 +54,9 @@ export function Header({
                 Open Source Tools. No Signups. Right in your browser
               </p>
               <p className={s.taglineSub}>
-                Ever tried to use a simple tool, and it had the audacity to ask
-                for a signup? Ever rolled your eyes at signup screens? If yes,
-                this should help you out! An reviewed-list of no-signup tools
+                Ever tried using a simple tool, just for it to have the audacity to ask
+                you for a signup? Ever rolled your eyes at signup screens? If yes,
+                this should help you out! A reviewed list of no-signup tools
                 that work instantly in your browser. Now say it with me: no
                 signups!
               </p>
