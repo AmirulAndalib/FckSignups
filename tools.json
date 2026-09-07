@@ -573,8 +573,8 @@
       "url": "https://web.localsend.org/",
       "category": "utilities",
       "tags": [
-        "file",
-        "transfer",
+        "file-transfer",
+        "file-share",
         "p2p",
         "LAN"
       ],
@@ -4220,6 +4220,104 @@
       "license": "GPL-3.0",
       "stars": 18,
       "addedAt": "2026-08-21",
+      "section": "meets-criteria"
+    },
+    {
+      "id": "opencad-studio",
+      "name": "OpenCAD Studio",
+      "description": "A CAD application built with Rust. 2D/3D drawing, DWG/DXF support, and GPU-accelerated rendering",
+      "url": "https://www.opencadstudio.com/",
+      "category": "productivity",
+      "tags": [
+        "cad-design",
+        "3d-design",
+        "3d-model"
+      ],
+      "github": "https://github.com/HakanSeven12/OpenCADStudio",
+      "license": "GPL-3.0",
+      "stars": 1162,
+      "addedAt": "2026-09-07",
+      "section": "editors-pick"
+    },
+    {
+      "id": "cyclecad",
+      "name": "CycleCAD",
+      "description": "Browser-based parametric 3D CAD modeler with AI-powered tools and native Inventor file parsing",
+      "url": "https://cyclecad.com/app/",
+      "category": "productivity",
+      "tags": [
+        "cad-design",
+        "3d-design",
+        "3d-model"
+      ],
+      "github": "https://github.com/xupeiwust/cyclecad",
+      "license": "MIT",
+      "stars": 2,
+      "addedAt": "2026-09-07",
+      "section": "meets-criteria"
+    },
+    {
+      "id": "chili3d",
+      "name": "Chili3D",
+      "description": "A 3D CAD running entirely in the browser",
+      "url": "https://chili3d.com/",
+      "category": "productivity",
+      "tags": [
+        "cad-design",
+        "3d-design",
+        "3d-model"
+      ],
+      "github": "https://github.com/xiangechen/chili3d",
+      "license": "AGPL-3.0",
+      "stars": 4805,
+      "addedAt": "2026-09-07",
+      "section": "featured"
+    },
+    {
+      "id": "1tools",
+      "name": "1.tools",
+      "description": "A collection of open-source developer tools for everyday tasks - encoders, decoders, generators, converters, and more.",
+      "url": "https://1.tools/",
+      "category": "development",
+      "tags": [
+        "dev-tools",
+        "development-tools"
+      ],
+      "github": "https://github.com/rytsh/bir",
+      "license": "Apache-2.0",
+      "stars": 8,
+      "addedAt": "2026-09-07",
+      "section": "meets-criteria"
+    },
+    {
+      "id": "tiny-image",
+      "name": "Tiny Image",
+      "description": "Compress, convert, resize, and optimize images & SVGs offline, all in your local browser. No uploads, no limits, no account.",
+      "url": "https://tinyimage.pages.dev/",
+      "category": "utilities",
+      "tags": [
+        "image-compression"
+      ],
+      "github": "https://github.com/mdrubelamin2/tinyimg",
+      "license": "?",
+      "stars": 2,
+      "addedAt": "2026-09-07",
+      "section": "meets-criteria"
+    },
+    {
+      "id": "skysend",
+      "name": "SkySend",
+      "description": "Minimalist, end-to-end encrypted, self-hostable file and note sharing.",
+      "url": "https://ch.skysend.app/",
+      "category": "utilities",
+      "tags": [
+        "file-transfer",
+        "file-share"
+      ],
+      "github": "https://github.com/skyfay/skysend",
+      "license": "AGPL-3.0",
+      "stars": 382,
+      "addedAt": "2026-09-07",
       "section": "meets-criteria"
     }
   ]
