@@ -3,6 +3,7 @@
   bottom: 100px;
   right: 27px;
   animation: idle-float 3s linear infinite alternate;
+  z-index: 20;
 }
 
 @media (max-width: 768px) {
