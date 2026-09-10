@@ -4417,6 +4417,99 @@
       "stars": 18,
       "addedAt": "2026-09-09",
       "section": "meets-criteria"
+    },
+    {
+      "id": "paaster",
+      "name": "Paaster",
+      "description": "Secure and user-friendly pastebin with end-to-end encryption and paste history.",
+      "url": "https://paaster.io/",
+      "category": "utilities",
+      "tags": [
+        "paste-bin"
+      ],
+      "github": "https://github.com/WardPearce/paaster",
+      "license": "AGPL-3.0",
+      "stars": 567,
+      "addedAt": "2026-09-09",
+      "section": "meets-criteria"
+    },
+    {
+      "id": "dsa-view-view",
+      "name": "DSA View View",
+      "description": "Turns TypeScript algorithm functions into step-by-step visual stories",
+      "url": "https://dsa-view-view.vercel.app/",
+      "category": "education",
+      "tags": [
+        "dsa",
+        "programming"
+      ],
+      "github": "https://github.com/nyaomaru/dsa-view-view",
+      "license": "MIT",
+      "stars": 21,
+      "addedAt": "2026-09-09",
+      "section": "meets-criteria"
+    },
+    {
+      "id": "stockade",
+      "name": "Stockade",
+      "description": "Stock market simulator for practicing trades with virtual money across stocks, crypto, forex, and futures.",
+      "url": "https://stockademarketsim.com/",
+      "category": "education",
+      "tags": [
+        "stock-market-simulator"
+      ],
+      "github": "https://github.com/KanishkVerma-046/stockade",
+      "license": "?",
+      "stars": 0,
+      "addedAt": "2026-09-09",
+      "section": "meets-criteria"
+    },
+    {
+      "id": "happytokenizer",
+      "name": "HappyTokenizer",
+      "description": "Helps analyze how text is split into tokens for different GPT and OpenAI model encodings, and estimate cost impact per model.",
+      "url": "https://happytokenizer.com/",
+      "category": "development",
+      "tags": [
+        "tokenizer",
+        "token-cost-analyzer"
+      ],
+      "github": "https://github.com/happytoolin/happytokenizer",
+      "license": "GPL-3.0",
+      "stars": 1,
+      "addedAt": "2026-09-09",
+      "section": "meets-criteria"
+    },
+    {
+      "id": "happyformatter",
+      "name": "HappyFormatter",
+      "description": "Format code for 40+ different languages & minify for 9 different targets.",
+      "url": "https://happyformatter.com/",
+      "category": "development",
+      "tags": [
+        "code-formatter",
+        "code-minifier"
+      ],
+      "github": "https://github.com/happytoolin/happyformatter",
+      "license": "GPL-3.0",
+      "stars": 0,
+      "addedAt": "2026-09-09",
+      "section": "meets-criteria"
+    },
+    {
+      "id": "champagne-wiki",
+      "name": "Champagne Wiki",
+      "description": "Curated protocols, assets, and tools for the modern archivist.",
+      "url": "https://champagne.pages.dev/",
+      "category": "lists",
+      "tags": [
+        "resources-list"
+      ],
+      "github": "https://github.com/champagnewiki/champagne-wiki",
+      "license": "?",
+      "stars": 101,
+      "addedAt": "2026-09-09",
+      "section": "meets-criteria"
     }
   ]
 }
