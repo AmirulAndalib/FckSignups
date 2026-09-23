@@ -4510,6 +4510,101 @@
       "stars": 101,
       "addedAt": "2026-09-09",
       "section": "meets-criteria"
+    },
+    {
+      "id": "pascal-editor",
+      "name": "Pascal Editor",
+      "description": "Browser-based 3D room planner for designing and testing interior layouts.",
+      "url": "https://pascaleditor.app/editor",
+      "category": "design",
+      "tags": [
+        "room-planner",
+        "3d",
+        "interior-layout-designer"
+      ],
+      "github": "https://github.com/pascalorg/editor",
+      "license": "MIT",
+      "stars": 24260,
+      "addedAt": "2026-09-22",
+      "section": "meets-criteria"
+    },
+    {
+      "id": "advanced-easing-editor",
+      "name": "Advanced Easing Editor",
+      "description": "Draw easing curves on a visual graph, preview them on a live shape, and export to CSS, GSAP, SVG, JavaScript, Flutter, Jetpack Compose, iOS and Android.",
+      "url": "https://ease.a-labs.space/",
+      "category": "development",
+      "tags": [
+        "easing-curve-visualizer"
+      ],
+      "github": "https://github.com/alabsi91/animare-ease-visualizer",
+      "license": "MIT",
+      "stars": 2,
+      "addedAt": "2026-09-22",
+      "section": "meets-criteria"
+    },
+    {
+      "id": "m3e-canvas",
+      "name": "M3E Canvas",
+      "description": "A browser-based UI prototyping tool for designing Material 3 Expressive app screens, linking interactive flows, and generating prompts for AI coding tools.",
+      "url": "https://lnkiai.github.io/m3e-canvas/",
+      "category": "development",
+      "tags": [
+        "mobile-app-prototype-designer"
+      ],
+      "github": "https://github.com/lnkiai/m3e-canvas",
+      "license": "MIT",
+      "stars": 8032,
+      "addedAt": "2026-09-22",
+      "section": "editors-pick"
+    },
+    {
+      "id": "github-readme-streak-stats",
+      "name": "GitHub Readme Streak Stats",
+      "description": "Stay motivated and show off your contribution streak! Display your total contributions, current streak, and longest streak on your GitHub profile README",
+      "url": "https://streak-stats.demolab.com/demo/",
+      "category": "data",
+      "tags": [
+        "github-profile",
+        "github-stats"
+      ],
+      "github": "https://github.com/DenverCoder1/github-readme-streak-stats",
+      "license": "MIT",
+      "stars": 7145,
+      "addedAt": "2026-09-22",
+      "section": "meets-criteria"
+    },
+    {
+      "id": "daily-stars-explorer",
+      "name": "Daily Stars Explorer",
+      "description": "Gain deeper insights into your favourite open-source GitHub repositories. Explore star trends showing daily stats.",
+      "url": "https://emanuelef.github.io/daily-stars-explorer/",
+      "category": "data",
+      "tags": [
+        "github-repo-stats",
+        "github-repo-trends"
+      ],
+      "github": "https://github.com/emanuelef/daily-stars-explorer",
+      "license": "MIT",
+      "stars": 403,
+      "addedAt": "2026-09-22",
+      "section": "meets-criteria"
+    },
+    {
+      "id": "justdeleteme",
+      "name": "JustDeleteMe",
+      "description": "A directory of direct links to delete your account from web services.",
+      "url": "https://justdeleteme.xyz/",
+      "category": "privacy",
+      "tags": [
+        "remove-accounts",
+        "delete-data"
+      ],
+      "github": "https://github.com/jdm-contrib/jdm",
+      "license": "MIT",
+      "stars": 1354,
+      "addedAt": "2026-09-22",
+      "section": "editors-pick"
     }
   ]
 }
