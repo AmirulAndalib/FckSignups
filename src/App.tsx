@@ -26,7 +26,7 @@ export default function App() {
     searchQuery,
     activeCategory,
     setSearchQuery,
-    setActiveCategory,
+    onCategoryChange,
   } = useTools();
 
   const activeCat = categories.find((c) => c.id === activeCategory);
@@ -48,7 +48,7 @@ export default function App() {
           allTools={tools}
           filteredCount={filteredTools.length}
           sortBy={sortBy}
-          onCategoryChange={setActiveCategory}
+          onCategoryChange={onCategoryChange}
           onSearchChange={setSearchQuery}
           onSortChange={setSortBy}
         />

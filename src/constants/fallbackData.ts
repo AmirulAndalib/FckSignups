@@ -235,3 +235,5 @@ export const DEV_JSON_URL = "../../../tools.json";
 export const PROD_JSON_URL =
   "https://raw.githubusercontent.com/BraveOPotato/FckSignups/refs/heads/main/tools.json";
 export const FALLBACK_REPO_STARS = "2.5k+";
+
+export const DEFAULT_CATEGORY_VALUE = "all";

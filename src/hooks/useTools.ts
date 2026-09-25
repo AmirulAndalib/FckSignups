@@ -1,5 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import {
+  DEFAULT_CATEGORY_VALUE,
   DEV_JSON_URL,
   FALLBACK_DATA,
   PROD_JSON_URL,
@@ -24,7 +26,7 @@ interface UseToolsReturn {
   searchQuery: string;
   activeCategory: string;
   setSearchQuery: (q: string) => void;
-  setActiveCategory: (id: string) => void;
+  onCategoryChange: (id: string) => void;
 }
 
 function sectionize(tools: Tool[]): ToolSections {
@@ -43,7 +45,9 @@ export function useTools(): UseToolsReturn {
   const [loadStatus, setLoadStatus] = useState<LoadStatus>("loading");
   const [errorMessage, setErrorMessage] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
-  const [activeCategory, setActiveCategory] = useState("all");
+
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeCategory = searchParams.get("category") || DEFAULT_CATEGORY_VALUE;
 
   useEffect(() => {
     async function load() {
@@ -118,6 +122,16 @@ export function useTools(): UseToolsReturn {
     [filteredTools],
   );
 
+  function onCategoryChange(id: string) {
+    const params = new URLSearchParams(searchParams);
+
+    id === DEFAULT_CATEGORY_VALUE
+      ? params.delete("category")
+      : params.set("category", id);
+
+    setSearchParams(params);
+  }
+
   return {
     tools: allTools,
     filteredTools,
@@ -130,7 +144,7 @@ export function useTools(): UseToolsReturn {
     searchQuery,
     activeCategory,
     setSearchQuery,
-    setActiveCategory,
+    onCategoryChange,
   };
 }
 
