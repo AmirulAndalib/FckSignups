@@ -237,3 +237,4 @@ export const PROD_JSON_URL =
 export const FALLBACK_REPO_STARS = "2.5k+";
 
 export const DEFAULT_CATEGORY_VALUE = "all";
+export const DEFAULT_SORT_VALUE = "default";

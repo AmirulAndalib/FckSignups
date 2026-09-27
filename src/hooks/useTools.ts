@@ -2,11 +2,18 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import {
   DEFAULT_CATEGORY_VALUE,
+  DEFAULT_SORT_VALUE,
   DEV_JSON_URL,
   FALLBACK_DATA,
   PROD_JSON_URL,
 } from "../constants/fallbackData";
-import type { Category, LoadStatus, Tool, ToolsData } from "../types";
+import type {
+  Category,
+  LoadStatus,
+  SortOption,
+  Tool,
+  ToolsData,
+} from "../types";
 
 export interface ToolSections {
   featured: Tool[];
@@ -25,8 +32,10 @@ interface UseToolsReturn {
   errorMessage: string;
   query: string;
   activeCategory: string;
+  sortBy: string;
   onCategoryChange: (id: string) => void;
   onSearchChange: (args: { query: string; isInput?: boolean }) => void;
+  onSortChange: (option: SortOption) => void;
 }
 
 function sectionize(tools: Tool[]): ToolSections {
@@ -48,6 +57,8 @@ export function useTools(): UseToolsReturn {
   const [searchParams, setSearchParams] = useSearchParams();
   const activeCategory = searchParams.get("category") || DEFAULT_CATEGORY_VALUE;
   const searchQuery = searchParams.get("q") || "";
+  const sortBy: SortOption =
+    (searchParams.get("sort") as SortOption | null) || DEFAULT_SORT_VALUE;
 
   const [query, setQuery] = useState(searchQuery);
   const debounceId: React.RefObject<null | number> = useRef(null);
@@ -161,6 +172,16 @@ export function useTools(): UseToolsReturn {
     setSearchParams(params);
   }
 
+  function onSortChange(option: SortOption) {
+    const params = new URLSearchParams(searchParams);
+
+    option === DEFAULT_SORT_VALUE
+      ? params.delete("sort")
+      : params.set("sort", option);
+
+    setSearchParams(params);
+  }
+
   return {
     tools: allTools,
     filteredTools,
@@ -172,8 +193,10 @@ export function useTools(): UseToolsReturn {
     errorMessage,
     query,
     activeCategory,
+    sortBy,
     onCategoryChange,
     onSearchChange,
+    onSortChange,
   };
 }
 
