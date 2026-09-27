@@ -9,7 +9,7 @@ interface ToolFiltersProps {
   filteredCount: number;
   sortBy: SortOption;
   onCategoryChange: (id: string) => void;
-  onSearchChange: (q: string) => void;
+  onSearchChange: (args: { query: string; isInput?: boolean }) => void;
   onSortChange: (sort: SortOption) => void;
 }
 
@@ -37,7 +37,9 @@ export function ToolFilters({
           <input
             type="search"
             value={searchQuery}
-            onChange={(e) => onSearchChange(e.target.value)}
+            onChange={(e) => onSearchChange(
+              { query: e.target.value, isInput: true})
+            }
             placeholder="Search tools by name, tag, or description..."
             aria-label="Search tools by name, tag, or description"
             autoComplete="off"

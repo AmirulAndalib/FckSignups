@@ -23,10 +23,10 @@ export default function App() {
     categories,
     loadStatus,
     errorMessage,
-    searchQuery,
+    query,
     activeCategory,
-    setSearchQuery,
     onCategoryChange,
+    onSearchChange,
   } = useTools();
 
   const activeCat = categories.find((c) => c.id === activeCategory);
@@ -38,18 +38,17 @@ export default function App() {
         <Header
           toolCount={tools.length}
           categoryCount={Math.max(0, categories.length - 1)}
-          setSearchQuery={setSearchQuery}
         />
 
         <ToolFilters
           categories={categories}
           activeCategory={activeCategory}
-          searchQuery={searchQuery}
+          searchQuery={query}
           allTools={tools}
           filteredCount={filteredTools.length}
           sortBy={sortBy}
           onCategoryChange={onCategoryChange}
-          onSearchChange={setSearchQuery}
+          onSearchChange={onSearchChange}
           onSortChange={setSortBy}
         />
         {activeCat && activeCat.id !== "all" && (
@@ -66,10 +65,10 @@ export default function App() {
             categories={categories}
             loadStatus={loadStatus}
             errorMessage={errorMessage}
-            searchQuery={searchQuery}
+            searchQuery={query}
             activeCategory={activeCategory}
             sortBy={sortBy}
-            setSearchQuery={setSearchQuery}
+            onSearchChange={onSearchChange}
           />
 
           <ReportFloatingWidget />

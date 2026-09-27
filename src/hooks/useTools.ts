@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import {
   DEFAULT_CATEGORY_VALUE,
@@ -23,10 +23,10 @@ interface UseToolsReturn {
   categories: Category[];
   loadStatus: LoadStatus;
   errorMessage: string;
-  searchQuery: string;
+  query: string;
   activeCategory: string;
-  setSearchQuery: (q: string) => void;
   onCategoryChange: (id: string) => void;
+  onSearchChange: (args: { query: string; isInput?: boolean }) => void;
 }
 
 function sectionize(tools: Tool[]): ToolSections {
@@ -44,10 +44,13 @@ export function useTools(): UseToolsReturn {
   const [categories, setCategories] = useState<Category[]>([]);
   const [loadStatus, setLoadStatus] = useState<LoadStatus>("loading");
   const [errorMessage, setErrorMessage] = useState("");
-  const [searchQuery, setSearchQuery] = useState("");
 
   const [searchParams, setSearchParams] = useSearchParams();
   const activeCategory = searchParams.get("category") || DEFAULT_CATEGORY_VALUE;
+  const searchQuery = searchParams.get("q") || "";
+
+  const [query, setQuery] = useState(searchQuery);
+  const debounceId: React.RefObject<null | number> = useRef(null);
 
   useEffect(() => {
     async function load() {
@@ -132,6 +135,32 @@ export function useTools(): UseToolsReturn {
     setSearchParams(params);
   }
 
+  function onSearchChange({
+    query,
+    isInput = false,
+  }: {
+    query: string;
+    isInput?: boolean;
+  }) {
+    if (isInput) {
+      if (debounceId.current) {
+        clearTimeout(debounceId.current);
+      }
+
+      setQuery(query);
+      debounceId.current = setTimeout(() => updateUrlQuery(query), 500);
+      return;
+    }
+
+    updateUrlQuery(query);
+  }
+
+  function updateUrlQuery(query: string) {
+    const params = new URLSearchParams(searchParams);
+    query === "" ? params.delete("q") : params.set("q", query);
+    setSearchParams(params);
+  }
+
   return {
     tools: allTools,
     filteredTools,
@@ -141,10 +170,10 @@ export function useTools(): UseToolsReturn {
     categories,
     loadStatus,
     errorMessage,
-    searchQuery,
+    query,
     activeCategory,
-    setSearchQuery,
     onCategoryChange,
+    onSearchChange,
   };
 }
 

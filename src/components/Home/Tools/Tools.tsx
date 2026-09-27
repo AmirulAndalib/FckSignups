@@ -20,7 +20,7 @@ interface ToolsProps {
   searchQuery: string;
   activeCategory: string;
   sortBy: SortOption;
-  setSearchQuery: (query: string) => void;
+  onSearchChange: (args: { query: string; isInput?: boolean }) => void;
 }
 
 const sectionVariantClass = {
@@ -39,7 +39,7 @@ export function Tools({
   searchQuery,
   activeCategory,
   sortBy,
-  setSearchQuery,
+  onSearchChange
 }: ToolsProps) {
   const [showMore, setShowMore] = useState(false);
 
@@ -92,7 +92,7 @@ export function Tools({
             tools={featured}
             categories={categories}
             searchKeywords={searchKeywords}
-            setSearchQuery={setSearchQuery}
+            onSearchChange={onSearchChange}
             sortBy={sortBy}
           />
         )}
@@ -104,7 +104,7 @@ export function Tools({
             tools={editorsPicks}
             categories={categories}
             searchKeywords={searchKeywords}
-            setSearchQuery={setSearchQuery}
+            onSearchChange={onSearchChange}
             sortBy={sortBy}
           />
         )}
@@ -117,7 +117,7 @@ export function Tools({
               tools={meetsCriteria}
               categories={categories}
               searchKeywords={searchKeywords}
-              setSearchQuery={setSearchQuery}
+              onSearchChange={onSearchChange}
               sortBy={sortBy}
             />
           ) : (
@@ -137,8 +137,8 @@ interface ToolsSectionProps {
   tools: Tool[];
   categories: Category[];
   searchKeywords: string[];
-  setSearchQuery: (query: string) => void;
   sortBy: SortOption;
+  onSearchChange: (args: { query: string; isInput?: boolean }) => void;
 }
 
 function ToolsSection({
@@ -147,8 +147,8 @@ function ToolsSection({
   tools,
   categories,
   searchKeywords,
-  setSearchQuery,
   sortBy,
+  onSearchChange
 }: ToolsSectionProps) {
   const sortedTools = [...tools].sort((left, right) => {
     if (sortBy === "default") return 0;
@@ -176,7 +176,7 @@ function ToolsSection({
             tool={tool}
             category={categories.find((c) => c.id === tool.category)}
             searchKeywords={searchKeywords}
-            setSearchQuery={setSearchQuery}
+            onSearchChange={onSearchChange}
           />
         ))}
       </div>
