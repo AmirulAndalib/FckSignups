@@ -14,6 +14,7 @@ import type {
   Tool,
   ToolsData,
 } from "../types";
+import { DEBOUNCE_SEARCH_FIELD_MS } from "../constants/time";
 
 export interface ToolSections {
   featured: Tool[];
@@ -159,7 +160,10 @@ export function useTools(): UseToolsReturn {
       }
 
       setQuery(query);
-      debounceId.current = setTimeout(() => updateUrlQuery(query), 500);
+      debounceId.current = setTimeout(
+        () => updateUrlQuery(query),
+        DEBOUNCE_SEARCH_FIELD_MS,
+      );
       return;
     }
 
