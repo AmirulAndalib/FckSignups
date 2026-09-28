@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import type { Category, SortOption, Tool } from "../../../types";
 import s from "./ToolFilters.module.css";
 
@@ -30,6 +31,16 @@ export function ToolFilters({
     counts[t.category] = (counts[t.category] ?? 0) + 1;
   });
 
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  function handleClearInput() {
+    onSearchChange({ query: "" });
+
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
+  }
+
   return (
     <div className={s.controls}>
       <div className={s.controlsInner}>
@@ -37,13 +48,25 @@ export function ToolFilters({
           <input
             type="search"
             value={searchQuery}
-            onChange={(e) => onSearchChange(
-              { query: e.target.value, isInput: true})
+            onChange={(e) =>
+              onSearchChange({ query: e.target.value, isInput: true })
             }
             placeholder="Search tools by name, tag, or description..."
             aria-label="Search tools by name, tag, or description"
             autoComplete="off"
+            ref={inputRef}
           />
+
+          <button
+            type="button"
+            className={s.clearButton}
+            onClick={handleClearInput}
+            aria-label="Clear search input"
+          >
+            <svg aria-hidden="true">
+              <use href="/icons-sprite.svg#x-mark" />
+            </svg>
+          </button>
         </div>
 
         <div

@@ -167,6 +167,7 @@ export function useTools(): UseToolsReturn {
       return;
     }
 
+    setQuery(query);
     updateUrlQuery(query);
   }
 
