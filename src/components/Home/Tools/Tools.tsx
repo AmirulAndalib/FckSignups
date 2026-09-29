@@ -151,7 +151,7 @@ function ToolsSection({
   onSearchChange
 }: ToolsSectionProps) {
   const sortedTools = [...tools].sort((left, right) => {
-    if (sortBy === "default") return 0;
+    if (sortBy === "stars") return 0;
 
     const leftTime = left.addedAt ? Date.parse(left.addedAt) : Number.NaN;
     const rightTime = right.addedAt ? Date.parse(right.addedAt) : Number.NaN;

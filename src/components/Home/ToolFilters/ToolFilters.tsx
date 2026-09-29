@@ -121,7 +121,7 @@ export function ToolFilters({
                 onSortChange(event.target.value as SortOption)
               }
             >
-              <option value="default">Default</option>
+              <option value="stars">Stars</option>
               <option value="newest">Newest</option>
               <option value="oldest">Oldest</option>
             </select>
